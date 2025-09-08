@@ -1,6 +1,6 @@
 const apiKey = 'fdecc86d9e33401b84c937187086dc96';
 const url = `https://newsapi.org/v2/top-headlines?country=us&category=business&pageSize=6&apiKey=${apiKey}`;
-const newsUrl = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`;
+const newsUrl = `https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=7&apiKey=${apiKey}`;
 const cnnUrl = `https://newsapi.org/v2/top-headlines?q=trump&pageSize=12&apiKey=${apiKey}`;
 
 // carousel function fetching top headline news
