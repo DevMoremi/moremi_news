@@ -1,6 +1,7 @@
 const apiKey = 'fdecc86d9e33401b84c937187086dc96';
 const url = `https://newsapi.org/v2/top-headlines?country=us&category=business&pageSize=6&apiKey=${apiKey}`;
 const newsUrl = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`;
+const cnnUrl = `https://newsapi.org/v2/top-headlines?q=trump&pageSize=12&apiKey=${apiKey}`;
 
 // carousel function fetching top headline news
 async function carousel() {
@@ -62,9 +63,7 @@ async function bbcNews(){
             console.log('Cannot fetch updates')
         }
         const bbcNewsData = await bbcNews.json();
-        console.log('bbc' , bbcNewsData);
         let bbcNewsArticles = bbcNewsData.articles;
-        console.log('yooo', bbcNewsArticles)
 
         const bbcContainer = document.getElementById('bbcWrap');
         bbcContainer.classList.add('wrap', 'd-md-grid');
@@ -97,7 +96,60 @@ async function bbcNews(){
         })
     }
     catch(error){
-        console.log('Try fetching again', error)
+        console.log('Try fetching again', error);
     }
 }
 bbcNews()
+
+// function fetching news updates from cnn
+
+async function cnnNews(){
+    try{
+        const cnnNews = await fetch(cnnUrl);
+        if(!cnnNews){
+            console.log('Try again');
+        }
+        const cnnNewsData = await cnnNews.json();
+        let cnnNewsArticles = cnnNewsData.articles;
+        console.log('me' , cnnNewsArticles)
+
+        const cnnContainer = document.getElementById('cnnWrap');
+        cnnContainer.classList.add('cnn-wrap', 'd-md-grid')
+
+
+
+        cnnNewsArticles.forEach(article =>{
+            const cnnContent = document.createElement('div');
+            cnnContent.classList.add('cnn-content', 'bg-white','pb-2', 'mt-3', 'd-flex')
+
+            const cnnImageWrap = document.createElement('div');
+            cnnImageWrap.classList.add('cnn-image')
+            const cnnImage = document.createElement('img');
+            cnnImage.src = article.urlToImage;
+
+            const cnnTextWrap = document.createElement('div');
+            cnnTextWrap.classList.add('mt-2', 'me-2', 'cnn-text');
+            const cnnAnchor = document.createElement('a');
+            cnnAnchor.href = article.url;
+            const cnnHeader = document.createElement('h3');
+            cnnHeader.textContent = article.title;
+            const cnnSpan = document.createElement('span');
+            cnnSpan.textContent = article.source.id
+
+
+            cnnContainer.appendChild(cnnContent);
+            cnnContent.appendChild(cnnImageWrap);
+            cnnImageWrap.appendChild(cnnImage);
+
+            cnnContent.appendChild(cnnTextWrap);
+            cnnTextWrap.appendChild(cnnAnchor);
+            cnnAnchor.appendChild(cnnHeader);
+            cnnTextWrap.appendChild(cnnSpan);
+        })
+    }
+    catch(error){
+        console.log('cannot fetch updates', error);
+    }
+    
+} 
+cnnNews()
