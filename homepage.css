@@ -52,7 +52,6 @@ header .background{
 
 /* nav styles */
 nav {
-    /* padding: 2.5vw 2.5vw 0 2.5vw; */
     padding: 1rem .75rem 0 .75rem;
 }
 nav ul{
@@ -95,6 +94,7 @@ nav .desc {
     font-family: var(--mono);
     color: #fff !important;
 }
+
 /* carousel styles */
 .carousel-caption{
     text-align: left;
@@ -130,6 +130,7 @@ nav .desc {
 .card-body button:hover{
     border: 2px solid var(--dkblue);
 }
+
 /* news sectiion styles */
 .cnn-content{
     border-radius: 3px;
@@ -166,10 +167,7 @@ section h1{
     color: #C82636;
 }
 
-
 /* media queries styles */
-
-
 @media(min-width: 569px)and (max-width:760px){
     .wrap{
         display: flex;
@@ -207,8 +205,7 @@ section h1{
     .cnn-content{
         display: block !important;
         padding-right: 0;
-        /* width: min-content; */
-        /* padding: 0; */
+        
     }
     .cnn-section h1{
         padding-bottom: .5rem;
