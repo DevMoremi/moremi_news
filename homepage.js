@@ -1,5 +1,6 @@
 const apiKey = 'fdecc86d9e33401b84c937187086dc96';
 const url = `https://newsapi.org/v2/top-headlines?country=us&category=business&pageSize=6&apiKey=${apiKey}`;
+const newsUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apiKey}`;
 
 async function carousel() {
     try{
@@ -8,10 +9,8 @@ async function carousel() {
             console.log('Cannot fetch')
         }
         const carouselResponseData = await carouselResponse.json();
-        console.log('new', carouselResponseData);
 
         let responseDataArticles = carouselResponseData.articles;
-        console.log('artick' , responseDataArticles);
         const carouselContainer = document.getElementById('carouselContainer'); 
 
         responseDataArticles.forEach(article => {
@@ -44,19 +43,7 @@ async function carousel() {
             carouselCaptionContainer.appendChild(captionParagraph); 
             captionParagraph.appendChild(captionAnchor);
             captionAnchor.appendChild(anchorButton);  
-
-
-
-
-
-
-
-
-
-            
         });
-
-
     }
     catch(error){
         console.log('try again',  error)
