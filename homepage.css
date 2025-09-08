@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --sans: 'Oxygen', san-serif;
+    --mono: "Oxygen mono", monospace;
+    --montserat : "Montserrat", sans-serif;
+   --raleway: "Raleway", sans-serif;
+   --PtSans: "PT Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #F6F6F6;
+}
+
+/* specific styles*/
+h1,
+h2,
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.background {
+    height: 2px;
+    background: #0f0f0f;
+    margin: 1.2rem 1rem 0 1rem;
+}
+header .background{
+    margin:  0 1rem 1rem;
+}
+
+/* nav styles */
+nav {
+    /* padding: 2.5vw 2.5vw 0 2.5vw; */
+    padding: 1rem .75rem 0 .75rem;
+}
+nav ul{
+    height: max-content;
+
+}
+nav ul li  {
+    padding: 1vw 1.5vw;
+    font-family: var(--sans);
+    font-weight: 700;
+    border-radius: 5px; 
+
+}
+
+nav ul li:last-child {
+    background-color: #C82636;
+
+}
+
+nav .desc {
+    font-size: 4.3333vw;
+    font-family: var(--sans);
+    font-weight: 700;
+}
+
+.desc>div {
+    background-color: #1B72E8;
+    color: #fff;
+    padding: 1vw .52vw .8333vw 1.3vw;
+}
+
+.desc span {
+    background-color: #fff;
+    color: #1B72E8;
+    padding: .833vw 1.2vw;
+    margin: 0 3px 0 8px;
+}
+
+.text a {
+    font-family: var(--mono);
+    color: #fff !important;
+}
+/* carousel styles */
+.carousel-caption{
+    text-align: left;
+    left: 5vw;
+    bottom: 6.333vw;
+}
+
+.card {
+    background-color: var(--dkblue) !important;
+    color: var(--white) !important;
+    transition: 0.2 ease;
+    user-select: none;
+}
+.card-body button{
+    border: 0;
+    margin-left: .5rem;
+    background: none;
+    color: var(--white);
+    cursor: pointer;
+    transform: rotate(-45deg)
+}
+.card-body button::after{
+    content: '\2192';
+}
+.card-body {
+    height: 480px;
+}
+
+.card-body img {
+    height: 100%;
+    object-fit: cover;
+}
+.card-body button:hover{
+    border: 2px solid var(--dkblue);
+}
+/* news sectiion styles */
+.cnn-content{
+    border-radius: 3px;
+    padding: 0 .2rem .5rem .0;
+}
+.bbc-content{
+    border-radius: 3px;
+}
+.bbc-image{
+    display: flex;
+    justify-self: center;
+}
+.cnn-image{
+    width: 350px;
+    margin-right: .5rem;
+}
+.cnn-image img{
+    width: 100%;
+}
+.bbc-image img{
+    width: 100%;
+}
+section h1{
+    font-family: var(--mono);
+    font-weight: 600;
+}
+.cnn-content h3{
+    font-family: var(--montserat);
+    font-weight: 600;
+    line-height: 1.05;
+    font-size: 1.05rem;
+}
+.cnn-section h1{
+    color: #C82636;
+}
+
+
+/* media queries styles */
+
+
+@media(min-width: 569px)and (max-width:760px){
+    .wrap{
+        display: flex;
+    }
+    .bbc-content{
+        margin-right: 1rem;
+    }
+
+    .cnn-wrap{
+        display: flex;
+        justify-content: space-around;
+    }
+    .cnn-image{
+        width: 260px;
+        margin-right: 0;
+    }
+    .cnn-content{
+        display: block !important;
+        width: min-content;
+        padding: 0;
+    }
+    .cnn-text{
+        margin-left: .5rem;
+    }
+    .cnn-section h1{
+        margin-left: .75rem;
+    }
+    nav .desc{
+        font-size: 3vw;
+        padding-bottom: .75rem;
+    }
+}
+ 
+ @media(min-width:760px){
+    .cnn-content{
+        display: block !important;
+        padding-right: 0;
+        /* width: min-content; */
+        /* padding: 0; */
+    }
+    .cnn-section h1{
+        padding-bottom: .5rem;
+    }
+    .cnn-text{
+        margin-left: .5rem;
+    }
+    .cnn-image{
+        width: unset;
+        margin-right: 0;
+    }
+    nav .desc{
+        font-size: 2vw;
+        padding-bottom: .75rem;
+    }
+
+ }
