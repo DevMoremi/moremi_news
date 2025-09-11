@@ -71,6 +71,8 @@ async function bbcNews(){
         bbcNewsArticles.forEach(article => {
             const bbcContent = document.createElement('div');
             bbcContent.classList.add('bbc-content','bg-white','p-3','mt-3');
+            const bbcAnchorWrap = document.createElement('a');
+            bbcAnchorWrap.href = article.url;
 
             const bbcImageWrap = document.createElement('div');
             bbcImageWrap.classList.add('bbc-image');
@@ -86,14 +88,17 @@ async function bbcNews(){
             bbcParagraph.textContent = article.content;
 
             bbcContainer.appendChild(bbcContent);
-            bbcContent.appendChild(bbcImageWrap)
+            bbcContent.appendChild(bbcAnchorWrap);
+            bbcAnchorWrap.appendChild(bbcImageWrap)
             bbcImageWrap.appendChild(bbcImage);
 
-            bbcContent.appendChild(bbcTextWrap);
+            bbcAnchorWrap.appendChild(bbcTextWrap);
             bbcTextWrap.appendChild(bbcHeader);
             bbcTextWrap.appendChild(bbcAnchorTag);
             bbcAnchorTag.appendChild(bbcParagraph);
         })
+        console.log('more', bbcContainer)
+
     }
     catch(error){
         console.log('Try fetching again', error);
@@ -121,6 +126,7 @@ async function cnnNews(){
         cnnNewsArticles.forEach(article =>{
             const cnnContent = document.createElement('div');
             cnnContent.classList.add('cnn-content', 'bg-white','pb-2', 'mt-3', 'd-flex')
+            const cnnAnchorWrap = document.createElement('a');
 
             const cnnImageWrap = document.createElement('div');
             cnnImageWrap.classList.add('cnn-image')
@@ -138,14 +144,16 @@ async function cnnNews(){
 
 
             cnnContainer.appendChild(cnnContent);
-            cnnContent.appendChild(cnnImageWrap);
+            cnnContent.appendChild(cnnAnchorWrap);
+            cnnAnchorWrap.appendChild(cnnImageWrap);
             cnnImageWrap.appendChild(cnnImage);
 
-            cnnContent.appendChild(cnnTextWrap);
+            cnnAnchorWrap.appendChild(cnnTextWrap);
             cnnTextWrap.appendChild(cnnAnchor);
             cnnAnchor.appendChild(cnnHeader);
             cnnTextWrap.appendChild(cnnSpan);
         })
+        console.log('Mor' , cnnContainer)
     }
     catch(error){
         console.log('cannot fetch updates', error);
