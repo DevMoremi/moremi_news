@@ -66,7 +66,7 @@ async function bbcNews(){
         let bbcNewsArticles = bbcNewsData.articles;
 
         const bbcContainer = document.getElementById('bbcWrap');
-        bbcContainer.classList.add('wrap', 'd-md-grid');
+        bbcContainer.classList.add('wrap', 'd-md-grid', 'me-md-4');
 
         bbcNewsArticles.forEach(article => {
             const bbcContent = document.createElement('div');
