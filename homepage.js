@@ -81,10 +81,12 @@ async function bbcNews(){
 
             const bbcTextWrap = document.createElement('div');
             const bbcHeader = document.createElement('h3');
+            bbcHeader.classList.add('pt-3', 'ps-2')
             bbcHeader.textContent = article.title;
             const bbcAnchorTag = document.createElement('a');
             bbcAnchorTag.href = article.url;
             const bbcParagraph = document.createElement('p');
+            bbcParagraph.classList.add('ps-2','pt-3', 'mb-0')
             bbcParagraph.textContent = article.content;
 
             bbcContainer.appendChild(bbcContent);
@@ -97,7 +99,6 @@ async function bbcNews(){
             bbcTextWrap.appendChild(bbcAnchorTag);
             bbcAnchorTag.appendChild(bbcParagraph);
         })
-        console.log('more', bbcContainer)
 
     }
     catch(error){
@@ -138,6 +139,7 @@ async function cnnNews(){
             const cnnAnchor = document.createElement('a');
             cnnAnchor.href = article.url;
             const cnnHeader = document.createElement('h3');
+            cnnHeader.classList.add('pb-2')
             cnnHeader.textContent = article.title;
             const cnnSpan = document.createElement('span');
             cnnSpan.textContent = article.author;
@@ -153,7 +155,6 @@ async function cnnNews(){
             cnnAnchor.appendChild(cnnHeader);
             cnnTextWrap.appendChild(cnnSpan);
         })
-        console.log('Mor' , cnnContainer)
     }
     catch(error){
         console.log('cannot fetch updates', error);
