@@ -47,7 +47,16 @@ a {
     margin: 1.2rem 1rem 0 1rem;
 }
 header .background{
-    margin:  0 1rem 1rem;
+    background-color: #E5E8EA;
+    margin:  0 0 1rem;
+}
+.body-background{
+    background-color: #E5E8EA;
+    margin: 1.2rem 0 0 0;
+    height: 2px;
+}
+section .background{
+    margin: 1.2rem 0 0 0;
 }
 
 /* nav styles */
@@ -168,39 +177,6 @@ section h1{
 }
 
 /* media queries styles */
-@media(min-width: 569px)and (max-width:760px){
-    .wrap{
-        display: flex;
-    }
-    .bbc-content{
-        margin-right: 1rem;
-    }
-
-    .cnn-wrap{
-        display: flex;
-        justify-content: space-around;
-    }
-    .cnn-image{
-        width: 260px;
-        margin-right: 0;
-    }
-    .cnn-content{
-        display: block !important;
-        width: min-content;
-        padding: 0;
-    }
-    .cnn-text{
-        margin-left: .5rem;
-    }
-    .cnn-section h1{
-        margin-left: .75rem;
-    }
-    nav .desc{
-        font-size: 3vw;
-        padding-bottom: .75rem;
-    }
-}
- 
  @media(min-width:760px){
     .cnn-content{
         display: block !important;
