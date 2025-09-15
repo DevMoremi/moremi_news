@@ -127,7 +127,6 @@ async function cnnNews(){
         cnnNewsArticles.forEach(article =>{
             const cnnContent = document.createElement('div');
             cnnContent.classList.add('cnn-content', 'bg-white','pb-2', 'mt-3', 'd-flex')
-            const cnnAnchorWrap = document.createElement('a');
 
             const cnnImageWrap = document.createElement('div');
             cnnImageWrap.classList.add('cnn-image')
@@ -146,11 +145,10 @@ async function cnnNews(){
 
 
             cnnContainer.appendChild(cnnContent);
-            cnnContent.appendChild(cnnAnchorWrap);
-            cnnAnchorWrap.appendChild(cnnImageWrap);
+            cnnContent.appendChild(cnnImageWrap);
             cnnImageWrap.appendChild(cnnImage);
 
-            cnnAnchorWrap.appendChild(cnnTextWrap);
+            cnnContent.appendChild(cnnTextWrap);
             cnnTextWrap.appendChild(cnnAnchor);
             cnnAnchor.appendChild(cnnHeader);
             cnnTextWrap.appendChild(cnnSpan);
