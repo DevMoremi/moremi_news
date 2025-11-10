@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+   --montserat: "Montserrat", sans-serif;
+   --raleway: "Raleway", sans-serif;
+   --PtSans: "PT Sans", sans-serif;
+   --sans: 'Oxygen', san-serif;
+   --mono: "Oxygen mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+body {
+   padding: 0;
+   margin: 0;
+   font-family: var(--raleway);
+    background-color: #F6F6F6;
+}
+/* specific styles */
+h1,
+h2,
+h3 {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+p{
+    margin: 0;
+    font-family: var(--montserat);
+    font-weight: 450;
+    line-height: 1.2;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+.background{
+        background-color: #E5E8EA;
+        margin: .4rem 0 0 0;
+        height: 2px;
+}
+.news-content .background{
+    margin: 1rem 0;
+}
+
+/* nav styles */
+.icon {
+   width: 5rem;
+   margin: 0;
+   
+}
+nav {
+    background-color: #fff;
+   display: flex;
+   justify-content: space-between;
+   padding: .75rem .5rem;
+}
+
+nav ul {
+   background-color: #fff;
+   margin: 0;
+   padding: 0;
+   position: fixed;
+   top: 50px;
+   gap: 0;
+   width: 100%;
+   transition: 0.3s;
+   right: -100%; 
+   z-index: 999;
+}
+
+nav ul.active {
+   right: 0;
+}
+ nav ul li{
+    margin-bottom: .5rem; 
+}
+ nav a {
+     font-family: var(--sans);
+     font-weight: 600;
+ }
+ #hamburger svg:hover{
+    background-color:   rgb(230, 232, 234);
+ }
+ /* nav hero section styles */
+ .hero-img img{
+    width: 100%;
+    aspect-ratio: 16/9;
+ }
+ .hero-img:hover{
+    opacity: .7;
+ }
+ .hero-text h2:hover{
+    text-decoration: underline;
+ }
+ 
+ .hero-text2 h2:hover{
+    text-decoration:  underline;
+ }
+ .span{
+   color: #0f0f0f;
+   font-family: var(--mono)
+;
+ }
+ /* news section styles */
+ .news-item-img img{
+    width: 100%;
+    aspect-ratio: 16/9;
+ }
+ .news-content h2{
+    font-size: 1.75rem;
+ }
+ .news-item-content h3{
+    font-size: .8rem;
+ }
+ .news-item-content span{
+    font-weight: 500;
+    font-size: 1rem;
+ }
+ .wrapper .news-item{
+    background-color: #fff;
+    padding: 0;
+   
+ }
+ .row{
+   margin-right:  0;
+   margin-left: 0;
+ }
+ /* footer styles */
+ footer{
+   background-color: #000;
+   padding: 1.5rem 5vw;
+   font-family: var(--montserat); 
+}
+footer .background{
+   background-color: #fff;
+   height: 2px;
+   margin: 0 0 1rem 0;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+footer ul li{
+   list-style-type: none;
+}
+.newsOptions ul{
+   display: flex;
+   gap: 2rem;
+   justify-content: flex-end;
+   padding-right: .5rem;
+}
+.social-section{
+   padding: 1rem 0;
+   text-align: center;
+   font-family: var(--montserat);
+   font-weight: 600;
+}
+.socials ul li {
+   width: 30px;
+   margin: 0 auto;
+   color: #fff;
+}
+.footer-icon{
+   width: 30px;
+   padding-bottom: 1rem;
+   margin: 0 auto;
+}
+.notDisplay{
+   display: none;
+}
+.info-section ul li a{
+font-size: .8rem;
+white-space: nowrap;
+text-align: center;
+}
+.cookies a{
+   text-decoration: underline;
+   color: #fff!important;
+   font-weight: 500;
+}
+.copyright{
+   font-size: .75rem;
+  text-align: center;
+}
+.info-section ul li{
+   text-align: center;
+   line-height: 1.2;
+}
+.socials p{
+   margin-bottom: 1rem;
+}
+
+
+
+ /* media queries styles */
+ @media(min-width:768px){
+    .hero-section{
+        width: 60%;
+    }
+    .hero{
+        width: 40%;
+    }  
+    .news-content .background{
+        all: unset;
+    }
+    .wrapper .news-item{
+      background-color: unset;
+      padding-right: 1rem;
+    }
+    h2{
+      font-size: 1.5rem
+    }
+    h3{
+      font-size: 1.5rem;
+    }
+
+    footer {
+      padding: 1.5rem 3vw;
+   }
+   .newsOptions ul {
+      justify-content: flex-start;
+      padding: 0;
+   }
+   .notDisplay {
+      display: block;
+   }
+   .footer-icon {
+      margin: unset;
+   }
+   .socials ul li {
+      width: 25px;
+   }
+   .socials ul {
+      margin-top: -.2rem;
+   }
+   .notDisplay ul::after {
+      content: "";
+      border-left: 2px solid white;
+      height: 3.15vw;
+      padding-right: .75rem;
+      margin-top: -.15rem;
+   }
+   .social-section {
+      font-size: 1.5vw;
+      padding-bottom: 0;
+   }
+   .socials-list {
+      margin-top: .2rem;
+   }
+ }
+ @media(min-width:1024px){
+    nav ul{
+        all: unset;
+        display: flex;
+        gap: 1rem;
+    }
+    
+ }
